@@ -1,46 +1,53 @@
-�������
-    �����������������������ƣ�
+磁盘配额
+    配额是针对整个分区进行限制；
 
-    ָ��quota 
+    指令quota 
         
 	quota [-guav]  [user,group]
-	 -g:��ʾȺ��
-	 -u:��ʾ�û�
-	 -s:ѡ����ʾiNode
-	 -v����ʾquota��ֵ
+	 -g:显示群组
+	 -u:显示用户
+	 -s:选择显示iNode
+	 -v：显示quota的值
 
-    quotacheck ָ�
+    quotacheck 指令：
          quotacheck [-auvg]  /yourpath
-	  -a:ɨ��/etc/mtab�����а�װ��֧��quota��Ӳ��
-	  -u��ɨ���û��ļ�
-	  -v:��ʾ����
-	  -g��ɨ��Ⱥ��ʹ�õ��ļ���Ŀ¼
+	  -a:扫描/etc/mtab中所有安装并支持quota的硬盘
+	  -u：扫描用户文件
+	  -v:显示过程
+	  -g：扫描群组使用的文件与目录
 
 	  quotacheck -uvg  /home
-	  #��ʼɨ��/home�������������Ŀ¼
+	  #开始扫描/home这个独立扇区的目录
 
-    edquota ָ�
-          edquota  [-u user] [-g group] [-t #����ʱ��]
-	    -u���û�
-	    -g:�û���
-	    -p:����ģ��
+    edquota 指令：
+          edquota  [-u user] [-g group] [-t #宽限时间]
+	    -u：用户
+	    -g:用户组
+	    -p:复制模板
 	    
-	  edquota -p test -u test2  #��test����˵�quota�������ϸ��Ƹ�test2����ˣ�
+	  edquota -p test -u test2  #将test这个人的quota限制资料复制给test2这个人！
 
 
-    quotaon ָ�
+    quotaon 指令：
           quotaon [-a] [-uvg directory]
-	    -a:�������е�quota�趨
-	    -u�������û���quota 
-	    -g:����Ⱥ���quota
-	    -s����ʾ��Ϣ
+	    -a:启动所有的quota设定
+	    -u：激活用户的quota 
+	    -g:启动群组的quota
+	    -s：显示信息
 
-    quotaoff ָ�
-           �ر�quota ����
-	   ���磺 quotaoff -a 
+    quotaoff 指令：
+           关闭quota 限制
+	   例如： quotaoff -a 
 
 
     ***********************************
 
 
-    ����������crontab ��һ����ִ��ָ��at
+    例行性命令crontab 与一次性执行指令at
+    
+    
+    
+    
+    
+    
+    彭浩西想添加一行中文字符串
